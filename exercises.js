@@ -370,13 +370,13 @@ var tupleToObjectReverse = function(arr){
  * @param {Array}
  * @return {Object}
  */
-var strToKeys = function(){
+var strToKeys = function(arr){
   var newObject = {};
   for(var i = 0; i<arr.length; i++){
-    newObject[arr[i]]=0
+    newObject[arr[i]]=0;
   }
-  return newObject
-}
+  return newObject;
+};
 
 /* #getValues
  *
@@ -396,9 +396,13 @@ var getValues = function(obj){
  * @param {Object}
  * @return {Array}
  */
-var getKeys = function(obj){
-return object.keys(obj)
-}
+var getKeys = (obj) => {
+  let arr = [];
+  for (let key in obj) {
+    arr.push(key);
+  }
+  return arr;
+};
 
 /* #objectToArray
  *
@@ -444,13 +448,14 @@ var arrayToObject = function(array){
  * @param {Array}
  * @return {Object}
  */
-var arraysToObject = function(array1, array2){
-  var newObj = {};
-  for(var i = 0; i<array.length; i++){
-    newObj[array1[i]] = array2[i];
+var arraysToObject;
+var arraysToObject = (arr1, arr2) => {
+  let obj = {};
+  for (let i = 0; i < arr1.length; i++) {
+    obj[arr1[i]] = arr2[i];
   }
-  return newObj
-}
+  return obj;
+};
 
 /* #objectsToTuples
  *
@@ -460,23 +465,20 @@ var arraysToObject = function(array1, array2){
  * @param {Object}
  * @return {Array}
  */
-var objectsToTuples = function(obj1, obj2){
-  var newArray = [];
+var objectsToTuples;
 
-for (var key in obj1){
-  tuple1.push(key);
-  tuple1.push(obj1[key]);
-  newArray.push(tuple1);
-}
-
-for (var key in obj2){
-  var tuple2 = [];
-  tuple2.push(key);
-  tuple2.push(obj2[key]);
-  newArray.push(tuple2);
-}
-return newArray;
-}
+var objectsToTuples = (obj1, obj2) => {
+  let arr = [];
+  for (key in obj1) {
+    let tuple = [key, obj1[key]];
+    arr.push(tuple);
+  }
+  for (key in obj2) {
+    let tuple = [key, obj2[key]];
+    arr.push(tuple);
+  }
+  return arr;
+};
 
 /* #mapArrayValues
  *
@@ -512,7 +514,7 @@ var mapStringCounts = function(array){
    }
   }
   return newObj;
-}
+};
 
 /* #arrayToObjectNums
  *
@@ -522,9 +524,13 @@ var mapStringCounts = function(array){
  * @param {Array}
  * @return {Object}
  */
-var arrayToObjectNums = function(array){
-  var newObj = {};
-}
+var arrayToObjectNums = (arr) => {
+  let obj = {};
+  for(let i = 0; i < arr.length; i++){
+    obj[arr[i]] = true;
+  }
+  return obj;
+};
 
 /* #stringToKeys
  *
@@ -533,7 +539,13 @@ var arrayToObjectNums = function(array){
  * @param {String}
  * @return {Object}
  */
-var stringToKeys;
+var stringToKeys = (str) => {
+  let obj = {};
+  for (let i = 0; i < str.length; i++){
+    obj[str[i]] = true;
+  }
+  return obj;
+};
 
 /* #charCountMap
  *
@@ -543,16 +555,29 @@ var stringToKeys;
  * @param {Array}
  * @return {Object}
  */
-var charCountMap;
+var charCountMap = (arr) => {
+  let obj = {};
+  for (let i = 0; i < arr.length; i++) {
+    obj[arr[i]] = arr[i].length;
+  }
+  return obj;
+};
 
 /* #frequencyMap
  *
  * takes in an array of strings and returns an object with the string as the key and the number of occurences as the value.
  *
  * @param {String}
- * @return {Object}
+ * @return {Bool}
  */
-var frequencyMap;
+var frequencyMap = (arr) => {
+  let obj = {};
+  for (let i = 0; i < arr.length; i++){
+    let newArr = arr.filter(str => str === arr[i]);
+    obj[arr[i]] = newArr.length;
+  }
+  return obj;
+};
 
 /* #tupleConvertToObject
  *
@@ -560,9 +585,15 @@ var frequencyMap;
  * the first element of the tuples and values are second element of the tuples.
  *
  * @param {String}
- * @return {Object}
+ * @return {Bool}
  */
-var tupleConvertToObject;
+var tupleConvertToObject = (arr) => {
+  let obj = {};
+  for (let i = 0; i < arr.length; i++){
+    obj[arr[i][0]] = arr[i][1];
+  }
+  return obj;
+};
 
 
 module.exports = {
@@ -600,9 +631,9 @@ module.exports = {
   objectsToTuples: objectsToTuples,
   mapArrayValues: mapArrayValues,
   mapStringCounts: mapStringCounts,
-  arrayToObjectNums: null,
-  stringToKeys: null,
-  charCountMap: null,
-  frequencyMap: null,
-  tupleConvertToObject: null
+  arrayToObjectNums: arrayToObjectNums,
+  stringToKeys: stringToKeys,
+  charCountMap: charCountMap,
+  frequencyMap: frequencyMap,
+  tupleConvertToObject: tupleConvertToObject
 }
