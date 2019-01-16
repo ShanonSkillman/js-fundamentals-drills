@@ -6,11 +6,11 @@
  * @return {Array} // [2,4,6]
  */
 var doubleArray = (arr) => {
-  let doubledArr = [];
-  for(let i = 0; i<arr.length; i++){
-    doubledArr.push(arr[i]*2)
+  let doubleArray = [];
+  for(let i =0; i<arr.length; i++){
+    doubleArray.push(arr[i]*2)
   }
-  return doubledArr;
+  return doubleArray;
 };
 
 /* #sumArrays
@@ -22,9 +22,9 @@ var doubleArray = (arr) => {
  * @return {Number}
  */
 var sumArrays = (arr1, arr2) => {
-  let sum = 0;
-  for(let i = 0; i<arr1.length; i++){
-    sum+=arr1[i]+arr2[i]
+  sum = 0;
+  for(let i=0; i<arr1.length; i++){
+    sum += arr1[i] + arr2[i]
   }
   return sum;
 };
@@ -38,7 +38,7 @@ var sumArrays = (arr1, arr2) => {
  */
 var stringCount = (str) => {
   let num = 0;
-  num = str.length
+  num = str.length;
   return num;
 };
 
@@ -50,8 +50,8 @@ var stringCount = (str) => {
  * @return {Number}
  */ 
 var arrayLength = (arr) => {
-  let num = 0;
-  num = arr.length
+  num = 0;
+  num = arr.length;
   return num;
 };
 
@@ -63,14 +63,15 @@ var arrayLength = (arr) => {
  * @return {Number}
  */
 var countAll = (arr) => {
-  let num = 0;
+  num = 0;
   for(let i=0; i<arr.length; i++){
-    if (typeof(arr[i] === "Number")) {
+    if(typeof(arr[i] === "Number")){
       num += arr[i];
     }
   }
   return num;
 };
+
 
 /* #countStrings
  *
@@ -81,7 +82,7 @@ var countAll = (arr) => {
  */
 var countStrings = (arr) => {
   let arrOfStrings = [];
-  for(let i =0; i<arr.length; i++){
+  for(let i=0; i<arr.length; i++){
     arrOfStrings.push(arr[i].length)
   }
   return arrOfStrings;
@@ -95,11 +96,11 @@ var countStrings = (arr) => {
  * @return {Number}
  */
 var countAllStrings = (arr) => {
-  let num = 0;
-  for (let i = 0; i<arr.length; i++){
-    num += arr[i].length
+  sum = 0;
+  for(let i=0; i<arr.length; i++){
+    sum += arr[i].length;
   }
-  return num;
+  return sum;
 };
 
 /* #convertToArray
@@ -111,7 +112,7 @@ var countAllStrings = (arr) => {
  */
 var convertToArray = (obj) => {
   let arr = [];
-  for (let key in obj) {
+  for(key in obj){
     arr.push(obj[key])
   }
   return arr;
@@ -125,8 +126,8 @@ var convertToArray = (obj) => {
  * @return {Number}
  */
 var objectSize = (obj) => {
-  let count = 0;
-  for (let key in obj){
+  count = 0;
+  for(let key in obj){
     count++
   }
   return count;
@@ -142,7 +143,7 @@ var objectSize = (obj) => {
 var createZeroFilledArray = (n) => {
   let arr = [];
   for(let i=0; i<n; i++){
-    arr.push(0);
+    arr.push(0)
   }
   return arr;
 };
@@ -155,8 +156,8 @@ var createZeroFilledArray = (n) => {
  * @return {Array}
  */
 var poppedArray = (arr) => {
-  arr.pop()
-  return arr;
+    arr.pop()
+    return arr;
 };
 
 /* #splitString
@@ -174,6 +175,7 @@ var splitString = (str) => {
   return arr;
 };
 
+
 /* #lengthOfLast
  *
  * Takes in an array of strings and returns the length of the last string.
@@ -187,6 +189,7 @@ var lengthOfLast = (arr) => {
   return lastStr.length;
 };
 
+
 /* #sumBelowTen
  *
  * Takes in an array of numbers and returns the sum of all numbers below 10.
@@ -198,12 +201,11 @@ var sumBelowTen = (arr) => {
   let sum = 0;
   for(let i =0; i<arr.length; i++){
     if(arr[i]<10){
-      sum+= arr[i]
+      sum += arr[i]
     }
   }
   return sum;
 };
-
 
 /* #moreThanTenLetters
  *
@@ -214,11 +216,11 @@ var sumBelowTen = (arr) => {
  */
 var moreThanTenLetters = (arr) => {
   let amt = 0;
-  for(let i=0; i<arr.length; i++){
-  if(arr[i].length >10){
-    amt += 1;
+  for(let i =0; i<arr.length; i++){
+    if(arr[i].length >10){
+      amt += 1;
+    }
   }
-}
   return amt;
 };
 
@@ -230,12 +232,12 @@ var moreThanTenLetters = (arr) => {
  * @return {Number}
  */
 var multiplyAll = (arr) => {
-  let productOfAllElements = 1;
+    let productOfAllElements = 1;
   for(let i=0; i<arr.length; i++){
-    productOfAllElements = arr[i]*productOfAllElements
+    productOfAllElements = arr[i] * productOfAllElements
   }
-  return productOfAllElements;
-};
+  return productOfAllElements
+}
 
 /* #sumAllPositive
  *
@@ -246,13 +248,13 @@ var multiplyAll = (arr) => {
  */
 var sumAllPositive = (arr) => {
   let sum = 0;
-  for(let i =0; i<arr.length; i++){
+  for(let i=0; i<arr.length; i++){
     if(arr[i]>=1){
-    sum += arr[i];
+      sum += arr[i];
     }
   }
   return sum;
-}
+  };
 
 /* #stringCountBelowThree
  *
@@ -261,9 +263,10 @@ var sumAllPositive = (arr) => {
  * @param {Array}
  * @return {Number}
  */
+
 var stringCountBelowThree = (arr) => {
   let sumOfStrings = 0;
-  for(let i = 0; i<arr.length; i++){
+  for(i=0; i<arr.length; i++){
     if(arr[i].length<=3){
       sumOfStrings++;
     }
@@ -280,8 +283,9 @@ var stringCountBelowThree = (arr) => {
  */
 var countObjects = (arr) => {
   let num =0;
-  return arr.length;
-};
+  num = arr.length;
+  return num;
+}
 
 /* #getObjectKeys
  *
@@ -293,7 +297,7 @@ var countObjects = (arr) => {
 var getObjectKeys = (obj) => {
   let arr = [];
   for(let key in obj){
-    arr.push(key);
+    arr.push(key)
   }
   return arr;
 };
@@ -308,10 +312,10 @@ var getObjectKeys = (obj) => {
 var getObjectValues = (obj) => {
   let arr = [];
   for(let key in obj){
-    arr.push(obj[key]);
+    arr.push(obj[key])
   }
   return arr;
-};
+}
 
 /* #makeObject
  *
@@ -378,11 +382,10 @@ var tupleToObjectReverse = (arr) => {
 var strToKeys = (arr) => {
   let obj = {};
   for(let i=0; i<arr.length; i++){
-  obj[arr[i]] =0;
+    obj[arr[i]] = 0;
   }
   return obj;
-};
-
+}
 
 /* #getValues
  *
@@ -404,7 +407,7 @@ var getValues = (obj) => {
  */
 var getKeys = (obj) => {
   let arr = [];
-  for(let key in obj){
+  for(key in obj){
     arr.push(key)
   }
   return arr;
@@ -420,14 +423,14 @@ var getKeys = (obj) => {
  */
 var objectToArray = (obj) => {
   let arr = [];
-    for(let key in obj){
-      let tuple = [];
-      tuple.push(key);
-      tuple.push(obj[key]);
-      arr.push(tuple);
-    }
-    return arr;
-  };
+  for(let key in obj){
+    let tuple = [];
+    tuple.push(key);
+    tuple.push(obj[key]);
+    arr.push(tuple);
+  }
+  return arr;
+};
 
 /* #arrayToObject
  *
@@ -457,7 +460,7 @@ var arrayToObject = (arr) => {
 var arraysToObject = (arr1, arr2) => {
   let obj = {};
   for(let i =0; i<arr1.length; i++){
-    obj[arr1[i]] = arr2[i];
+    obj[arr1[i]] = arr2[i]
   }
   return obj;
 };
@@ -472,7 +475,6 @@ var arraysToObject = (arr1, arr2) => {
  */
 var objectsToTuples = (obj1, obj2) => {
   let arr = [];
-
   for(key in obj1){
     let tuple = [key, obj1[key]];
     arr.push(tuple);
@@ -492,11 +494,11 @@ var objectsToTuples = (obj1, obj2) => {
  * @return {Object}
  */
 var mapArrayValues = (arr) => {
-    let obj = {};
-    for(let i=0; i<arr.length; i++){
-      obj[arr[i]] = true;
-    }
-    return obj;
+  let obj = {};
+  for(let i =0; i<arr.length; i++){
+    obj[arr[i]] = true;
+  }
+  return obj;
 };
 
 /* #mapStringCounts
@@ -509,17 +511,16 @@ var mapArrayValues = (arr) => {
  * @return {Object}
  */
 var mapStringCounts = (arr) => {
-  let obj = {};
-  for(let i=0; i<arr.length; i++){
-    if(arr[i].length>=5){
-      obj [arr[i]] = true;
+  let obj = {}; 
+for(let i=0; i<arr.length; i++){
+  if(arr[i].length>=5){
+      obj[arr[i]] = true;
     }else{
-      obj [arr[i]] = false;
+     obj[arr[i]] = false;
     }
   }
   return obj;
 };
-
 
 /* #arrayToObjectNums
  *
@@ -562,11 +563,11 @@ var stringToKeys = (str) => {
  */
 var charCountMap = (arr) => {
   let obj = {};
-  for(let i =0; i<arr.length; i++){
+  for(let i = 0; i<arr.length; i++){
     obj[arr[i]] = arr[i].length;
   }
   return obj;
-};
+}
 
 /* #frequencyMap
  *
@@ -577,7 +578,7 @@ var charCountMap = (arr) => {
  */
 var frequencyMap = (arr) => {
   let obj = {};
-  for(let i = 0; i<arr.length; i ++){
+  for(let i = 0; i<arr.length; i++){
     let newArr = arr.filter(str=> str === arr[i]);
     obj[arr[i]] = newArr.length;
   }
