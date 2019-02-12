@@ -496,10 +496,11 @@ var objectsToTuples = (obj1, obj2) => {
 var mapArrayValues = (arr) => {
   let obj = {};
   for (let i = 0; i < arr.length; i++) {
-    obj[arr[i]] = true
+    obj[arr[i]] = true;
   }
   return obj;
 };
+
 
 /* #mapStringCounts
  *
@@ -521,6 +522,7 @@ var mapStringCounts = (arr) => {
   }
   return obj;
 };
+
 
 /* #arrayToObjectNums
  *
@@ -567,7 +569,7 @@ var charCountMap = (arr) => {
     obj[arr[i]] = arr[i].length;
   }
   return obj;
-}
+};
 
 /* #frequencyMap
  *
@@ -596,10 +598,11 @@ var frequencyMap = (arr) => {
 var tupleConvertToObject = (arr) => {
   let obj = {};
   for (let i = 0; i < arr.length; i++) {
-    obj[arr[i][0]] = arr[i][1];
+    obj[arr[i][0]] = arr[i][1]
   }
   return obj;
 };
+
 
 module.exports = {
   doubleArray: doubleArray,
